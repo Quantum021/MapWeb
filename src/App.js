@@ -26,6 +26,7 @@ export default function App() {
     });
     window.addEventListener("message", message => {
       let getData = JSON.parse(message.data);
+      window.ReactNativeWebView.postMessage(getData)
       setSelectedPark(getData);
       if (getData.group === "bus") {
         setToggle(false);
