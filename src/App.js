@@ -11,12 +11,13 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
 
 export default function App() {
+  // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
+  // eslint-disable-next-line 
   const [long, setLong] = useState([]);
 
   const [toggle, setToggle] = useState(false);
   const mapRef = useRef(null);
-
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
       setLat(position.coords.latitude);
@@ -39,7 +40,7 @@ export default function App() {
 
   window.addEventListener("message", message => {
     let getData = JSON.parse(message.data);
-
+    
     if (getData.group === "bus") {
       setToggle(false);
     } else {
