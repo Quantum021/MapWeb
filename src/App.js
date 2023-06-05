@@ -25,8 +25,7 @@ export default function App() {
       setLong(position.coords.longitude);
     });
     window.addEventListener("message", message => {
-      // alert(message)
-      let getData = JSON.parse(message);
+      let getData = JSON.parse(message.data);
       setSelectedPark(getData);
       if (getData.group === "bus") {
         setToggle(false);
@@ -81,7 +80,7 @@ export default function App() {
             longitude: selectedPark.geometry.coordinates[0],
             width: "100vw",
             height: "100vh",
-            zoom: 20,
+            zoom: 15,
             maxBounds: bounds
           }
           : {
@@ -89,7 +88,7 @@ export default function App() {
             longitude: 127.0133,
             width: "100vw",
             height: "100vh",
-            zoom: 15,
+            zoom: 13,
             maxBounds: bounds
           }}
         style={{ width: '100vw', height: '100vh' }}
