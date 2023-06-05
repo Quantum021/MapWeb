@@ -9,65 +9,19 @@ import BedOutlinedIcon from '@mui/icons-material/BedOutlined';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
-// import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
-// import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
-
-// // mapboxgl.workerClass = MapboxWorker;
-// const map = new mapboxgl.Map({
-//     container: 'map', // container ID
-//     style: 'mapbox://styles/mapbox/streets-v12', // style URL
-//     center: [-74.5, 40], // starting position [lng, lat]
-//     zoom: 9 // starting zoom
-// });
 
 export default function App() {
-  // const [selectedPark, setSelectedPark] = useState(null);
-
-  // mapboxgl.accessToken = 'pk.eyJ1IjoicXVhbnR1bTIwMjEiLCJhIjoiY2w0YXdseHZoMGp0ZzNobzdhOXM2Z3hpdSJ9.cxMFsx7RUfspcEz-C7loCw';
-  // const map = new mapboxgl.Map({
-  //   container: 'map',
-  //   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-  //   style: 'mapbox://styles/quantum2021/cl4ikiamr000w15juomtzimvi',
-  // });
-  // const map = useRef();
-
-  // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
-  // eslint-disable-next-line 
   const [long, setLong] = useState([]);
 
   const [toggle, setToggle] = useState(false);
   const mapRef = useRef(null);
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
       setLat(position.coords.latitude);
       setLong(position.coords.longitude);
     });
-    // map.setCenter([0,0]);
-    // window.dispatchEvent(d => {
-    //   setToggle(true)
-    // })
-    // const listener = message => {
-    //   // a = JSON.parse(message);
-    //   // document.ReactNativeWebView.postMessage(JSON.stringify(JSON.parse(message)))
-    //   // setToggle(true)
-    //   alert(message)
-    // };
-
-    // window.onload(e => {
-    //   alert(e)
-    // })
-    // if(selectedPark !== null){
-    //   if(selectedPark.group === "facility"){
-    //     window.ReactNativeWebView.postMessage(JSON.stringify(selectedPark))
-    //   }
-    // }
-    // window.addEventListener("message", message => {
-    //   // let td = JSON.parse(message.data).dataToggle;
-    //   console.log(message.data);
-    // })
-
-    // window.addEventListener("load", listener);
 
     return () => {
       window.removeEventListener("message", () => { });
@@ -85,9 +39,7 @@ export default function App() {
 
   window.addEventListener("message", message => {
     let getData = JSON.parse(message.data);
-    // window.ReactNativeWebView.postMessage(message.data)
 
-    // setSelectedPark(getData);
     if (getData.group === "bus") {
       setToggle(false);
     } else {
@@ -107,9 +59,7 @@ export default function App() {
         mapRef.current?.flyTo({center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
         zoom: 16})
       },1000);
-      // setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
     }
-    // if(message)
   })
 
   return (
@@ -125,40 +75,6 @@ export default function App() {
           maxBounds: bounds
         }}
         ref={mapRef}
-        // ref={map => {
-        //   let getData;
-        //   window.addEventListener("message", message => {
-        //     getData = JSON.parse(message.data);
-        //     // window.ReactNativeWebView.postMessage(message.data)
-
-        //     // setSelectedPark(getData);
-        //     if (getData.group === "bus") {
-        //       setToggle(false);
-        //     } else {
-        //       if (getData.group === "facility") {
-        //         window.ReactNativeWebView.postMessage(message.data);
-        //       } else {
-        //         parkDate.features.forEach(park => {
-        //           if (park.properties.NAME === getData.properties.MALL) {
-        //             let newob = park;
-        //             newob.properties.list[getData.properties.index].isExpanded = true;
-        //             window.ReactNativeWebView.postMessage(JSON.stringify(newob));
-        //           }
-        //         });
-        //       }
-        //       setToggle(true);
-        //       // setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
-        //     }
-        //     // if(message)
-        //   })
-        //   setTimeout(() => {
-        //     map.flyTo({
-        //       center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
-        //       zoom: 16
-        //     })
-        //   }, 1000)
-        // }}
-        id="map"
         style={{ width: '100vw', height: '100vh' }}
         mapStyle="mapbox://styles/quantum2021/cl4ikiamr000w15juomtzimvi"
         mapboxAccessToken="pk.eyJ1IjoicXVhbnR1bTIwMjEiLCJhIjoiY2w0YXdseHZoMGp0ZzNobzdhOXM2Z3hpdSJ9.cxMFsx7RUfspcEz-C7loCw" >
