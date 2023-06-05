@@ -26,7 +26,7 @@ export default function App() {
     });
 
     window.addEventListener("message", message => {
-      let getData = message.data;
+      let getData = JSON.parse(message.data);
       // window.ReactNativeWebView.postMessage(message.data)
       
       setSelectedPark(getData);
@@ -35,7 +35,7 @@ export default function App() {
       } else {
         setToggle(true);
       }
-      alert(getData.geometry.coordinates[0])
+      alert(getData.group)
       // if(message)
     })
     // window.dispatchEvent(d => {
