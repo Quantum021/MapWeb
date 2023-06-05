@@ -25,29 +25,7 @@ export default function App() {
       setLong(position.coords.longitude);
     });
 
-    window.addEventListener("message", message => {
-      let getData = JSON.parse(message.data);
-      // window.ReactNativeWebView.postMessage(message.data)
-      
-      // setSelectedPark(getData);
-      if (getData.group === "bus") {
-        setToggle(false);
-      } else {
-        setToggle(true);
-        if(getData.group === "facility"){
-          window.ReactNativeWebView.postMessage(message.data);
-        } else {
-          parkDate.features.forEach(park => {
-            if(park.properties.NAME === getData.properties.MALL){
-              let newob = park;
-              newob.properties.list[getData.properties.index].isExpanded = true;
-              window.ReactNativeWebView.postMessage(JSON.stringify(newob));
-            }
-          });
-        }
-      }
-      // if(message)
-    })
+    
     // window.dispatchEvent(d => {
     //   setToggle(true)
     // })
@@ -88,6 +66,31 @@ export default function App() {
     [127.1010, 37.0178] //northEast address
   ];
 
+  window.addEventListener("message", message => {
+    let getData = message.data;
+    console.log(getData);
+    // window.ReactNativeWebView.postMessage(message.data)
+    
+    // setSelectedPark(getData);
+    if (getData.group === "bus") {
+      setToggle(false);
+    } else {
+      setToggle(true);
+      if(getData.group === "facility"){
+        window.ReactNativeWebView.postMessage(JSON.stringify(message.data));
+      } else {
+        parkDate.features.forEach(park => {
+          if(park.properties.NAME === getData.properties.MALL){
+            let newob = park;
+            newob.properties.list[getData.properties.index].isExpanded = true;
+            window.ReactNativeWebView.postMessage(JSON.stringify(newob));
+          }
+        });
+      }
+    }
+    // if(message)
+  })
+  
   return (
     <>
       <MapGL
