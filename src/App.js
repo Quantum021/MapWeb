@@ -80,15 +80,15 @@ export default function App() {
             longitude: selectedPark.geometry.coordinates[0],
             width: "100vw",
             height: "100vh",
-            zoom: 15,
+            zoom: 16,
             maxBounds: bounds
           }
           : {
-            latitude: 0,
-            longitude: 0,
+            latitude: 36.9672,
+            longitude: 127.0133,
             width: "100vw",
             height: "100vh",
-            zoom: 13,
+            zoom: 14,
             maxBounds: bounds
           }}
         style={{ width: '100vw', height: '100vh' }}
