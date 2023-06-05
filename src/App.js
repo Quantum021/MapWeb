@@ -70,7 +70,6 @@ export default function App() {
     let getData = JSON.parse(message.data);
     // window.ReactNativeWebView.postMessage(message.data)
 
-    setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
     if (getData.group === "bus") {
       setToggle(false);
     } else {
@@ -86,7 +85,7 @@ export default function App() {
         });
       }
       setToggle(true);
-
+      setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
     }
     // if(message)
   })
