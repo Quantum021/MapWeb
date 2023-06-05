@@ -21,7 +21,7 @@ import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
 // });
 
 export default function App() {
-  const [selectedPark, setSelectedPark] = useState(null);
+  // const [selectedPark, setSelectedPark] = useState(null);
 
   // mapboxgl.accessToken = 'pk.eyJ1IjoicXVhbnR1bTIwMjEiLCJhIjoiY2w0YXdseHZoMGp0ZzNobzdhOXM2Z3hpdSJ9.cxMFsx7RUfspcEz-C7loCw';
   // const map = new mapboxgl.Map({
@@ -126,7 +126,7 @@ export default function App() {
             getData = JSON.parse(message.data);
             // window.ReactNativeWebView.postMessage(message.data)
 
-            setSelectedPark(getData);
+            // setSelectedPark(getData);
             if (getData.group === "bus") {
               setToggle(false);
             } else {
