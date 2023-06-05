@@ -11,7 +11,7 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
 
 export default function App() {
-  const [selectedPark, setSelectedPark] = useState(null);
+  // const [selectedPark, setSelectedPark] = useState(null);
   // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
   // eslint-disable-next-line 
@@ -129,6 +129,8 @@ export default function App() {
                   <h4>{park.properties.NAME}</h4>
                 </button>
               </Marker>;
+            } else {
+              return null;
             }
           } else {
             if (park.group !== "bus") {
@@ -158,6 +160,8 @@ export default function App() {
                   <h4>{park.properties.NAME}</h4>
                 </button>
               </Marker>
+            } else {
+              return null;
             }
           }
         }
