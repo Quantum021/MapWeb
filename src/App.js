@@ -67,7 +67,7 @@ export default function App() {
   ];
 
   window.addEventListener("message", message => {
-    let getData = message.data;
+    let getData = JSON.parse(message.data);
     // window.ReactNativeWebView.postMessage(message.data)
     
     // setSelectedPark(getData);
@@ -86,6 +86,7 @@ export default function App() {
         });
       }
       setToggle(true);
+      
     }
     // if(message)
   })
