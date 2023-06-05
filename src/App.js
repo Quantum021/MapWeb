@@ -91,11 +91,11 @@ export default function App() {
         container: 'map',
         // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/quantum2021/cl4ikiamr000w15juomtzimvi',
-        center: [127.0133, 36.9672],
+        center: [36.9672, 127.0133],
         zoom: 14
         });
         map.flyTo({
-          center: [getData.geometry.coordinates[1], getData.geometry.coordinates[0]],
+          center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
           essential: true // this animation is considered essential with respect to prefers-reduced-motion
           });
       // setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
