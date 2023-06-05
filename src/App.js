@@ -68,14 +68,12 @@ export default function App() {
 
   window.addEventListener("message", message => {
     let getData = message.data;
-    console.log(getData);
     // window.ReactNativeWebView.postMessage(message.data)
     
     // setSelectedPark(getData);
     if (getData.group === "bus") {
       setToggle(false);
     } else {
-      setToggle(true);
       if(getData.group === "facility"){
         window.ReactNativeWebView.postMessage(JSON.stringify(message.data));
       } else {
@@ -87,10 +85,11 @@ export default function App() {
           }
         });
       }
+      setToggle(true);
     }
     // if(message)
   })
-  
+
   return (
     <>
       <MapGL
