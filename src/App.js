@@ -17,11 +17,7 @@ export default function App() {
   // eslint-disable-next-line 
   const [long, setLong] = useState([]);
 
-  const [toggle, setToggle] = useState({
-    "lat": 0,
-    "long": 0,
-    "bool": false
-  });
+  const [toggle, setToggle] = useState(false);
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -32,19 +28,23 @@ export default function App() {
     window.addEventListener("message", message => {
       let getData = JSON.parse(message.data);
       // window.ReactNativeWebView.postMessage(message.data)
+      
       // setSelectedPark(getData);
       if (getData.group === "bus") {
-        setToggle(prev => {
-          return { ...prev };
-        });
+        setToggle(false);
       } else {
-        setToggle(prev => {
-          return {
-            ...prev,
-            "lat": getData.geometry.coordinates[1],
-            "long": getData.geometry.coordinates[0]
-          };
-        });
+        setToggle(true);
+        if(getData.group === "facility"){
+          window.ReactNativeWebView.postMessage(message.data);
+        } else {
+          parkDate.features.forEach(park => {
+            if(park.properties.NAME === getData.properties.MALL){
+              let newob = park;
+              newob.properties.list[getData.properties.index].isExpanded = true;
+              window.ReactNativeWebView.postMessage(JSON.stringify(newob));
+            }
+          });
+        }
       }
       // if(message)
     })
@@ -79,7 +79,7 @@ export default function App() {
     // };
   }, []);
 
-// alert(toggle.lat)
+
 
   // alert(selectedPark.group)
   // Restrict map panning to an area
@@ -93,13 +93,13 @@ export default function App() {
       <MapGL
         dragRotate={false}
         initialViewState={{
-          latitude: 36.9672,
-          longitude: 127.0133,
-          width: "100vw",
-          height: "100vh",
-          zoom: 14,
-          maxBounds: bounds
-        }}
+            latitude: 36.9672,
+            longitude: 127.0133,
+            width: "100vw",
+            height: "100vh",
+            zoom: 14,
+            maxBounds: bounds
+          }}
         style={{ width: '100vw', height: '100vh' }}
         mapStyle="mapbox://styles/quantum2021/cl4ikiamr000w15juomtzimvi"
         mapboxAccessToken="pk.eyJ1IjoicXVhbnR1bTIwMjEiLCJhIjoiY2w0YXdseHZoMGp0ZzNobzdhOXM2Z3hpdSJ9.cxMFsx7RUfspcEz-C7loCw" >
@@ -111,28 +111,26 @@ export default function App() {
         />
         <NavigationControl position="bottom-right" showCompass={false} />
         <button className="toggle-btn" onClick={() => {
-          setToggle(prev => {
-            return{...prev, "bool": !toggle.bool}
-          });
+          setToggle(!toggle);
         }}>
           <div style={{
             borderRadius: 20,
-            color: !toggle.bool ? '#fff' : '#000',
+            color: !toggle ? '#fff' : '#000',
             fontSize: 13,
             margin: 3,
             fontWeight: 'bold',
-            backgroundColor: !toggle.bool ? '#000' : '#fff',
+            backgroundColor: !toggle ? '#000' : '#fff',
             height: '75%',
           }}>
             Bus
           </div>
           <div style={{
             borderRadius: 20,
-            color: toggle.bool ? '#fff' : '#000',
+            color: toggle ? '#fff' : '#000',
             fontSize: 13,
             margin: 3,
             fontWeight: 'bold',
-            backgroundColor: toggle.bool ? '#000' : '#fff',
+            backgroundColor: toggle ? '#000' : '#fff',
             height: '80%',
           }}>
             Facility
@@ -140,7 +138,7 @@ export default function App() {
         </button>
 
         {parkDate.features.map(park => {
-          if (!toggle.bool) {
+          if (!toggle) {
             if (park.group === "bus") {
               return <Marker
                 key={park.id}
