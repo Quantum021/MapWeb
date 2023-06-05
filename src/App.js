@@ -52,9 +52,9 @@ export default function App() {
 
     // window.addEventListener("load", listener);
 
-    // return () => {
-    //   window.removeEventListener("load", listener);
-    // };
+    return () => {
+      window.removeEventListener("message");
+    };
   }, []);
 
 
