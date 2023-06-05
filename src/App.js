@@ -11,7 +11,7 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
 
 export default function App() {
-  let [selectedPark, setSelectedPark] = useState(null);
+  const [selectedPark, setSelectedPark] = useState({"group":-1});
   // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
   // eslint-disable-next-line 
@@ -25,7 +25,7 @@ export default function App() {
       setLong(position.coords.longitude);
     });
 
-    setSelectedPark(window.addEventListener("message", message => {
+    window.addEventListener("message", message => {
       let getData = JSON.parse(message.data);
       // window.ReactNativeWebView.postMessage(message.data)
       
@@ -35,10 +35,8 @@ export default function App() {
       } else {
         setToggle(true);
       }
-       return getData;
       // if(message)
     })
-    )
     // window.dispatchEvent(d => {
     //   setToggle(true)
     // })
@@ -83,7 +81,7 @@ export default function App() {
     <>
       <MapGL
         dragRotate={false}
-        initialViewState={typeof selectedPark.group !== 'undefined'
+        initialViewState={selectedPark.group !== -1
           ? {
             latitude: selectedPark.geometry.coordinates[1],
             longitude: selectedPark.geometry.coordinates[0],
