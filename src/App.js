@@ -83,30 +83,30 @@ export default function App() {
     [127.1010, 37.0178] //northEast address
   ];
 
-  window.addEventListener("message", message => {
-    let getData = JSON.parse(message.data);
-    // window.ReactNativeWebView.postMessage(message.data)
+  // window.addEventListener("message", message => {
+  //   let getData = JSON.parse(message.data);
+  //   // window.ReactNativeWebView.postMessage(message.data)
 
-    setSelectedPark(getData);
-    if (getData.group === "bus") {
-      setToggle(false);
-    } else {
-      if (getData.group === "facility") {
-        window.ReactNativeWebView.postMessage(message.data);
-      } else {
-        parkDate.features.forEach(park => {
-          if (park.properties.NAME === getData.properties.MALL) {
-            let newob = park;
-            newob.properties.list[getData.properties.index].isExpanded = true;
-            window.ReactNativeWebView.postMessage(JSON.stringify(newob));
-          }
-        });
-      }
-      setToggle(true);
-      // setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
-    }
-    // if(message)
-  })
+  //   setSelectedPark(getData);
+  //   if (getData.group === "bus") {
+  //     setToggle(false);
+  //   } else {
+  //     if (getData.group === "facility") {
+  //       window.ReactNativeWebView.postMessage(message.data);
+  //     } else {
+  //       parkDate.features.forEach(park => {
+  //         if (park.properties.NAME === getData.properties.MALL) {
+  //           let newob = park;
+  //           newob.properties.list[getData.properties.index].isExpanded = true;
+  //           window.ReactNativeWebView.postMessage(JSON.stringify(newob));
+  //         }
+  //       });
+  //     }
+  //     setToggle(true);
+  //     // setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
+  //   }
+  //   // if(message)
+  // })
 
   return (
     <>
@@ -121,22 +121,37 @@ export default function App() {
           maxBounds: bounds
         }}
         ref={map => {
-          // map = map3;
-          if (selectedPark !== null) {
-            setTimeout(() => {
-              map.flyTo({
-                center: [127.0133, 36.9672],
-                zoom: 14
-              })
-            }, 1000);
-          } else {
-            setTimeout(() => {
-              map.flyTo({
-                center: [selectedPark.geometry.coordinates[0], selectedPark.geometry.coordinates[0]],
-                zoom: 16
-              })
-            }, 1000)
-          }
+          let getData;
+          window.addEventListener("message", message => {
+            getData = JSON.parse(message.data);
+            // window.ReactNativeWebView.postMessage(message.data)
+
+            setSelectedPark(getData);
+            if (getData.group === "bus") {
+              setToggle(false);
+            } else {
+              if (getData.group === "facility") {
+                window.ReactNativeWebView.postMessage(message.data);
+              } else {
+                parkDate.features.forEach(park => {
+                  if (park.properties.NAME === getData.properties.MALL) {
+                    let newob = park;
+                    newob.properties.list[getData.properties.index].isExpanded = true;
+                    window.ReactNativeWebView.postMessage(JSON.stringify(newob));
+                  }
+                });
+              }
+              setToggle(true);
+              // setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
+            }
+            // if(message)
+          })
+          setTimeout(() => {
+            map.flyTo({
+              center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
+              zoom: 16
+            })
+          }, 1000)
         }}
         id="map"
         style={{ width: '100vw', height: '100vh' }}
