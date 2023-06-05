@@ -11,7 +11,7 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
 
 export default function App() {
-  const [selectedPark, setSelectedPark] = useState([0,0]);
+  const [selectedPark, setSelectedPark] = useState([0, 0]);
   // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
   // eslint-disable-next-line 
@@ -25,7 +25,7 @@ export default function App() {
       setLong(position.coords.longitude);
     });
 
-    
+
     // window.dispatchEvent(d => {
     //   setToggle(true)
     // })
@@ -69,16 +69,16 @@ export default function App() {
   window.addEventListener("message", message => {
     let getData = JSON.parse(message.data);
     // window.ReactNativeWebView.postMessage(message.data)
-    
+
     setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
     if (getData.group === "bus") {
       setToggle(false);
     } else {
-      if(getData.group === "facility"){
+      if (getData.group === "facility") {
         window.ReactNativeWebView.postMessage(message.data);
       } else {
         parkDate.features.forEach(park => {
-          if(park.properties.NAME === getData.properties.MALL){
+          if (park.properties.NAME === getData.properties.MALL) {
             let newob = park;
             newob.properties.list[getData.properties.index].isExpanded = true;
             window.ReactNativeWebView.postMessage(JSON.stringify(newob));
@@ -86,7 +86,7 @@ export default function App() {
         });
       }
       setToggle(true);
-      
+
     }
     // if(message)
   })
@@ -95,8 +95,8 @@ export default function App() {
       <MapGL
         dragRotate={false}
         initialViewState={{
-          latitude: typeof selectedPark.geometry === 'undefined' ?  36.9672 : selectedPark.geometry.coordinates[1],
-          longitude: typeof selectedPark.geometry === 'undefined' ? 127.0133 : selectedPark.geometry.coordinates[0],
+          latitude: selectedPark[1] === 0 ? 36.9672 : selectedPark[1],
+          longitude: selectedPark[0] === 0 ? 127.0133 : selectedPark[0],
           width: "100vw",
           height: "100vh",
           zoom: 14,
