@@ -11,7 +11,8 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
 
 export default function App() {
-  // const [selectedPark, setSelectedPark] = useState(null);
+  const [getLat, setGetLat] = useState(0);
+  const [getLong, setGetLong] = useState(0);
   // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
   // eslint-disable-next-line 
@@ -28,8 +29,9 @@ export default function App() {
     window.addEventListener("message", message => {
       let getData = JSON.parse(message.data);
       // window.ReactNativeWebView.postMessage(message.data)
-      
-      alert(getData.geometry.coordinates[0])
+
+      setGetLat(getData.geometry.coordinates[1]);
+      setGetLong(getData.geometry.coordinates[0]);
       // setSelectedPark(getData);
       if (getData.group === "bus") {
         setToggle(false);
@@ -70,6 +72,7 @@ export default function App() {
   }, []);
 
 
+  alert(getLat, getLong)
 
   // alert(selectedPark.group)
   // Restrict map panning to an area
@@ -82,14 +85,23 @@ export default function App() {
     <>
       <MapGL
         dragRotate={false}
-        initialViewState={{
-          latitude: 36.9672,
-          longitude: 127.0133,
-          width: "100vw",
-          height: "100vh",
-          zoom: 14,
-          maxBounds: bounds
-        }}
+        initialViewState={getLat === 0
+          ? {
+            latitude: 36.9672,
+            longitude: 127.0133,
+            width: "100vw",
+            height: "100vh",
+            zoom: 14,
+            maxBounds: bounds
+          }
+          : {
+            latitude: getLat,
+            longitude: getLong,
+            width: "100vw",
+            height: "100vh",
+            zoom: 14,
+            maxBounds: bounds
+          }}
         style={{ width: '100vw', height: '100vh' }}
         mapStyle="mapbox://styles/quantum2021/cl4ikiamr000w15juomtzimvi"
         mapboxAccessToken="pk.eyJ1IjoicXVhbnR1bTIwMjEiLCJhIjoiY2w0YXdseHZoMGp0ZzNobzdhOXM2Z3hpdSJ9.cxMFsx7RUfspcEz-C7loCw" >
