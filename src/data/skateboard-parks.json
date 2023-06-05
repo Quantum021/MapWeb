@@ -1662,6 +1662,8 @@
         "NAME": "Zoeckler Mini Mall",
         "list": [
           {
+            "isExpanded": false,
+            "index": 0,
             "NAME": "Subway",
             "TYPE": "Dining",
             "MALL": "Zoeckler Mini Mall",
@@ -1672,6 +1674,8 @@
             "ADDRESS": "Pacific Victors Avenue, Songhwa-li Pyeongtaek-si, 17982, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 1,
             "NAME": "Pizza Hut",
             "TYPE": "Dining",
             "MALL": "Zoeckler Mini Mall",
@@ -1682,6 +1686,8 @@
             "ADDRESS": "Pacific Victors Avenue, Songhwa-li Pyeongtaek-si, 17982, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 2,
             "NAME": "Barber Shop",
             "TYPE": "Service",
             "MALL": "Zoeckler Mini Mall",
@@ -1692,6 +1698,8 @@
             "ADDRESS": "Pacific Victors Avenue, Songhwa-li Pyeongtaek-si, 17982, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 3,
             "NAME": "Joayo Korea Palace",
             "TYPE": "Dining",
             "MALL": "Zoeckler Mini Mall",
@@ -1702,6 +1710,8 @@
             "ADDRESS": "Pacific Victors Avenue, Songhwa-li Pyeongtaek-si, 17982, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 4,
             "NAME": "Juicy",
             "TYPE": "Dining",
             "MALL": "Zoeckler Mini Mall",
@@ -1729,6 +1739,8 @@
         "NAME": "Downtown Shopping Center",
         "list": [
           {
+            "isExpanded": false,
+            "index": 0,
             "NAME": "Military Clothing",
             "TYPE": "Store",
             "MALL": "Downtown Shopping Center",
@@ -1739,6 +1751,8 @@
             "ADDRESS": "7th Street, Daechu-ri, Pyeongtaek-si, 17927, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 1,
             "NAME": "Alterations",
             "TYPE": "Service",
             "MALL": "Downtown Shopping Center",
@@ -1749,6 +1763,8 @@
             "ADDRESS": "7th Street, Daechu-ri, Pyeongtaek-si, 17927, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 2,
             "NAME": "Pizza Hut",
             "TYPE": "Dining",
             "MALL": "DownTown Shopping Center",
@@ -1759,6 +1775,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 3,
             "NAME": "Charleys",
             "TYPE": "Dining",
             "MALL": "DownTown Shopping Center",
@@ -1769,6 +1787,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 4,
             "NAME": "Popeyes",
             "TYPE": "Dining",
             "MALL": "DownTown Shopping Center",
@@ -1779,6 +1799,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 5,
             "NAME": "Burger King",
             "TYPE": "Dining",
             "MALL": "DownTown Shopping Center",
@@ -1789,6 +1811,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 6,
             "NAME": "Taco Bell",
             "TYPE": "Dining",
             "MALL": "DownTown Shopping Center",
@@ -1799,6 +1823,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 7,
             "NAME": "Manchu Wok",
             "TYPE": "Dining",
             "MALL": "DownTown Shopping Center",
@@ -1809,6 +1835,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 8,
             "NAME": "Arby's",
             "TYPE": "Dining",
             "MALL": "DownTown Shopping Center",
@@ -1819,6 +1847,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 9,
             "NAME": "Baskin-Robbins",
             "TYPE": "Dining",
             "MALL": "DownTown Shopping Center",
@@ -1829,6 +1859,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 10,
             "NAME": "Bag & Luggage",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -1839,6 +1871,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 11,
             "NAME": "Barber Shop",
             "TYPE": "Service",
             "MALL": "DownTown Shopping Center",
@@ -1849,6 +1883,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 12,
             "NAME": "Hair Studio",
             "TYPE": "Service",
             "MALL": "DownTown Shopping Center",
@@ -1859,6 +1895,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 13,
             "NAME": "Custom Shoe",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -1869,6 +1907,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 14,
             "NAME": "Timberland",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -1879,6 +1919,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 15,
             "NAME": "General Nutrition Centers",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -1889,6 +1931,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 16,
             "NAME": "Nail Studio",
             "TYPE": "Service",
             "MALL": "DownTown Shopping Center",
@@ -1899,6 +1943,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 17,
             "NAME": "Optical Center",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -1909,6 +1955,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 18,
             "NAME": "Smoothie King",
             "TYPE": "Dining",
             "MALL": "DownTown Shopping Center",
@@ -1919,6 +1967,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 19,
             "NAME": "Starbucks",
             "TYPE": "Dining",
             "MALL": "DownTown Shopping Center",
@@ -1929,6 +1979,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 20,
             "NAME": "U.S. Patriot",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -1939,6 +1991,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 21,
             "NAME": "Art & Gift Shop",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -1949,6 +2003,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 22,
             "NAME": "Auntie Anne's",
             "TYPE": "Dining",
             "MALL": "DownTown Shopping Center",
@@ -1959,6 +2015,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 23,
             "NAME": "Beauty Supply",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -1969,6 +2027,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 24,
             "NAME": "Blanket",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -1979,6 +2039,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 25,
             "NAME": "Flower & Garden",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -1989,6 +2051,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 26,
             "NAME": "Furniture",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -1999,6 +2063,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 27,
             "NAME": "Hobby Shop",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -2009,6 +2075,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 28,
             "NAME": "KT",
             "TYPE": "Service",
             "MALL": "DownTown Shopping Center",
@@ -2019,6 +2087,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 29,
             "NAME": "LG Uplus",
             "TYPE": "Service",
             "MALL": "DownTown Shopping Center",
@@ -2029,6 +2099,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 30,
             "NAME": "Military AutoSource",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -2039,6 +2111,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 31,
             "NAME": "Men's Clothing",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -2049,6 +2123,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 32,
             "NAME": "Nature Collection",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -2059,6 +2135,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 33,
             "NAME": "Socks & Hats",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -2069,6 +2147,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 34,
             "NAME": "Watch w/ Repair",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -2079,6 +2159,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 35,
             "NAME": "Wood Burning",
             "TYPE": "Service",
             "MALL": "DownTown Shopping Center",
@@ -2089,6 +2171,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 36,
             "NAME": "Custom Suits",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -2099,6 +2183,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 37,
             "NAME": "Photo Studio",
             "TYPE": "Service",
             "MALL": "DownTown Shopping Center",
@@ -2109,6 +2195,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 38,
             "NAME": "Dunkin Donuts",
             "TYPE": "Dining",
             "MALL": "DownTown Shopping Center",
@@ -2119,6 +2207,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 39,
             "NAME": "Hi-Pass",
             "TYPE": "Service",
             "MALL": "DownTown Shopping Center",
@@ -2129,6 +2219,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 40,
             "NAME": "Smart Home Device",
             "TYPE": "Store",
             "MALL": "DownTown Shopping Center",
@@ -2139,6 +2231,8 @@
             "ADDRESS": "24-13 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 41,
             "NAME": "Daily Clean Housecleaning",
             "TYPE": "Service",
             "MALL": "DownTown Shopping Center",
@@ -2210,6 +2304,8 @@
         "NAME": "Dual Food Court",
         "list": [
           {
+            "isExpanded": false,
+            "index": 0,
             "NAME": "Popeyes",
             "TYPE": "Dining",
             "MALL": "Dual Food Court",
@@ -2220,6 +2316,8 @@
             "ADDRESS": "6365, Marne Avenue, Dodu-ri, Pyeongtaek-si, 17982, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 1,
             "NAME": "Burger King",
             "TYPE": "Dining",
             "MALL": "Dual Food Court",
@@ -2247,6 +2345,8 @@
         "NAME": "Maude Hall",
         "list": [
           {
+            "isExpanded": false,
+            "index": 0,
             "NAME": "Quiznos",
             "TYPE": "Dining",
             "MALL": "Maude Hall",
@@ -2257,6 +2357,8 @@
             "ADDRESS": "6400, Marne Avenue, Dodu-ri, Pyeongtaek-si, 17982, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 1,
             "NAME": "KFR Car Rental",
             "TYPE": "Service",
             "MALL": "Maude Hall",
@@ -2267,6 +2369,8 @@
             "ADDRESS": "6400, Marne Avenue, Dodu-ri, Pyeongtaek-si, 17982, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 2,
             "NAME": "Mobile & Internet(LG U+)",
             "TYPE": "Service",
             "MALL": "Maude Hall",
@@ -2277,6 +2381,8 @@
             "ADDRESS": "6400, Marne Avenue, Dodu-ri, Pyeongtaek-si, 17982, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 3,
             "NAME": "H&R Block",
             "TYPE": "Service",
             "MALL": "Maude Hall",
@@ -2304,6 +2410,8 @@
         "NAME": "NCOA",
         "list": [
           {
+            "isExpanded": false,
+            "index": 0,
             "NAME": "Barber Shop",
             "TYPE": "Service",
             "MALL": "NCOA",
@@ -2314,6 +2422,8 @@
             "ADDRESS": "6120, Bayonet Avenue, Dodu-ri, Pyeongtaek-si, 17982, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 1,
             "NAME": "Cleaners",
             "TYPE": "Service",
             "MALL": "NCOA",
@@ -2324,6 +2434,8 @@
             "ADDRESS": "6120, Bayonet Avenue, Dodu-ri, Pyeongtaek-si, 17982, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 2,
             "NAME": "Smoothie King",
             "TYPE": "Dining",
             "MALL": "NCOA",
@@ -2373,6 +2485,8 @@
         "NAME": "Brian D. Allgood Army Community Hospital",
         "list": [
           {
+            "isExpanded": false,
+            "index": 0,
             "NAME": "Barber Shop",
             "TYPE": "Service",
             "MALL": "Brian D. Allgood Army Community Hospital",
@@ -2383,6 +2497,8 @@
             "ADDRESS": "3030, Indianhead Avenue, Dodu-ri, Pyeongtaek-si, 17982, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 1,
             "NAME": "Jamba Juice",
             "TYPE": "Dining",
             "MALL": "Brian D. Allgood Army Community Hospital",
@@ -2410,6 +2526,8 @@
         "NAME": "USFK HQ",
         "list": [
           {
+            "isExpanded": false,
+            "index": 0,
             "NAME": "Barber Shop",
             "TYPE": "Service",
             "MALL": "USFK HQ",
@@ -2420,6 +2538,8 @@
             "ADDRESS": "Iron Knights Street, Dongchang-ri, Pyeongtaek-si, 17982, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 1,
             "NAME": "Bun-D Natural Food",
             "TYPE": "Dining",
             "MALL": "USFK HQ",
@@ -2535,6 +2655,8 @@
         "NAME": "Sentry Mini Mall",
         "list": [
           {
+            "isExpanded": false,
+            "index": 0,
             "NAME": "Popeyes",
             "TYPE": "Dining",
             "MALL": "Sentry Mini Mall",
@@ -2545,6 +2667,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 1,
             "NAME": "Subway",
             "TYPE": "Dining",
             "MALL": "Sentry Mini Mall",
@@ -2555,6 +2679,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 2,
             "NAME": "Taco Bell",
             "TYPE": "Dining",
             "MALL": "Sentry Mini Mall",
@@ -2565,6 +2691,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 3,
             "NAME": "Starbucks",
             "TYPE": "Dining",
             "MALL": "Sentry Mini Mall",
@@ -2575,6 +2703,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 4,
             "NAME": "Anthony's Pizza",
             "TYPE": "Dining",
             "MALL": "Sentry Mini Mall",
@@ -2585,6 +2715,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 5,
             "NAME": "Freshens Smoothie",
             "TYPE": "Dining",
             "MALL": "Sentry Mini Mall",
@@ -2595,6 +2727,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 6,
             "NAME": "Water Shop",
             "TYPE": "Store",
             "MALL": "Sentry Mini Mall",
@@ -2605,6 +2739,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 7,
             "NAME": "Barber Shop",
             "TYPE": "Service",
             "MALL": "Sentry Mini Mall",
@@ -2615,6 +2751,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 8,
             "NAME": "Mobile & Internet(LG U+)",
             "TYPE": "Service",
             "MALL": "Sentry Mini Mall",
@@ -2625,6 +2763,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 9,
             "NAME": "Gift Shop",
             "TYPE": "Store",
             "MALL": "Sentry Mini Mall",
@@ -2635,6 +2775,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 10,
             "NAME": "Flowers",
             "TYPE": "Store",
             "MALL": "Sentry Mini Mall",
@@ -2645,6 +2787,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 11,
             "NAME": "Engraving",
             "TYPE": "Service",
             "MALL": "Sentry Mini Mall",
@@ -2655,6 +2799,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 12,
             "NAME": "Cleaners",
             "TYPE": "Service",
             "MALL": "Sentry Mini Mall",
@@ -2665,6 +2811,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 13,
             "NAME": "Alterations",
             "TYPE": "Service",
             "MALL": "Sentry Mini Mall",
@@ -2675,6 +2823,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 14,
             "NAME": "Locker Storage",
             "TYPE": "Service",
             "MALL": "Sentry Mini Mall",
@@ -2685,6 +2835,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 15,
             "NAME": "Janz DME",
             "TYPE": "Service",
             "MALL": "Sentry Mini Mall",
@@ -2695,6 +2847,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 16,
             "NAME": "The Spa",
             "TYPE": "Service",
             "MALL": "Sentry Mini Mall",
@@ -2705,6 +2859,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 17,
             "NAME": "Humphreys Dental Clinic",
             "TYPE": "Service",
             "MALL": "Sentry Mini Mall",
@@ -2715,6 +2871,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 18,
             "NAME": "KT",
             "TYPE": "Service",
             "MALL": "Sentry Mini Mall",
@@ -2725,6 +2883,8 @@
             "ADDRESS": "Sentry Mini Mall, 400, Porter Avenue, Bonjeong-ri, Pyeongtaek-si, 17979, South Korea"
           },
           {
+            "isExpanded": false,
+            "index": 19,
             "NAME": "Computer Repair Shop",
             "TYPE": "Service",
             "MALL": "Sentry Mini Mall",
@@ -2752,6 +2912,8 @@
         "NAME": "MP Hill Express&Charleys",
         "list": [
           {
+            "isExpanded": false,
+            "index": 0,
             "NAME": "3rd MI Express",
             "TYPE": "Store",
             "MALL": "MP Hill Express&Charleys",
@@ -2762,6 +2924,8 @@
             "ADDRESS": "35-3 Dangchu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 1,
             "NAME": "3rd MI Charleys",
             "TYPE": "Dining",
             "MALL": "MP Hill Express&Charleys",
@@ -2789,6 +2953,8 @@
         "NAME": "Troop Mini Mall",
         "list": [
           {
+            "isExpanded": false,
+            "index": 0,
             "NAME": "Troop Mini Mall Express",
             "TYPE": "Store",
             "MALL": "Troop Mini Mall",
@@ -2799,6 +2965,8 @@
             "ADDRESS": "70-8 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 1,
             "NAME": "Hunt Brothers Pizza",
             "TYPE": "Dining",
             "MALL": "Troop Mini Mall",
@@ -2809,6 +2977,8 @@
             "ADDRESS": "70-8 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 2,
             "NAME": "LG Uplus",
             "TYPE": "Service",
             "MALL": "Troop Mini Mall",
@@ -2819,6 +2989,8 @@
             "ADDRESS": "70-8 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 3,
             "NAME": "Cleaners",
             "TYPE": "Service",
             "MALL": "Troop Mini Mall",
@@ -2829,6 +3001,8 @@
             "ADDRESS": "70-8 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 4,
             "NAME": "Barber Shop",
             "TYPE": "Service",
             "MALL": "Troop Mini Mall",
@@ -2839,6 +3013,8 @@
             "ADDRESS": "70-8 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 5,
             "NAME": "Subway",
             "TYPE": "Dining",
             "MALL": "Troop Mini Mall",
@@ -2849,6 +3025,8 @@
             "ADDRESS": "70-8 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 6,
             "NAME": "Taco Bell",
             "TYPE": "Dining",
             "MALL": "Troop Mini Mall",
@@ -2859,6 +3037,8 @@
             "ADDRESS": "70-8 Dodu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 7,
             "NAME": "Starbucks",
             "TYPE": "Dining",
             "MALL": "Troop Mini Mall",
@@ -2886,6 +3066,8 @@
         "NAME": "Family Mini Mall",
         "list": [
           {
+            "isExpanded": false,
+            "index": 0,
             "NAME": "Family Mini Mall Express / Gas Station",
             "TYPE": "Store",
             "MALL": "Family Mini Mall",
@@ -2896,6 +3078,8 @@
             "ADDRESS": "200-62 Dangchu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 1,
             "NAME": "Hunt Brothers Pizza",
             "TYPE": "Dining",
             "MALL": "Family Mini Mall",
@@ -2906,6 +3090,8 @@
             "ADDRESS": "200-62 Dangchu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 2,
             "NAME": "Bissell Rental",
             "TYPE": "Service",
             "MALL": "Family Mini Mall",
@@ -2916,6 +3102,8 @@
             "ADDRESS": "200-62 Dangchu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 3,
             "NAME": "Subway",
             "TYPE": "Dining",
             "MALL": "Family Mini Mall",
@@ -2926,6 +3114,8 @@
             "ADDRESS": "200-62 Dangchu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 4,
             "NAME": "Bun-D Natural Food",
             "TYPE": "Dining",
             "MALL": "Family Mini Mall",
@@ -2936,6 +3126,8 @@
             "ADDRESS": "200-62 Dangchu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 5,
             "NAME": "autoOasis Car Care Center",
             "TYPE": "Service",
             "MALL": "Family Mini Mall",
@@ -2946,6 +3138,8 @@
             "ADDRESS": "200-62 Dangchu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 6,
             "NAME": "Smoothie King",
             "TYPE": "Dining",
             "MALL": "Family Mini Mall",
@@ -2956,6 +3150,8 @@
             "ADDRESS": "200-62 Dangchu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 7,
             "NAME": "Barber Shop",
             "TYPE": "Service",
             "MALL": "Family Mini Mall",
@@ -2966,6 +3162,8 @@
             "ADDRESS": "200-62 Dangchu-ri, Paengseong-eup, Pyeongtaek-si, Gyeonggi-do"
           },
           {
+            "isExpanded": false,
+            "index": 8,
             "NAME": "Bike Shop",
             "TYPE": "Store",
             "MALL": "Family Mini Mall",
