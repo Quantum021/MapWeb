@@ -75,7 +75,7 @@ export default function App() {
       setToggle(false);
     } else {
       if(getData.group === "facility"){
-        window.ReactNativeWebView.postMessage(JSON.stringify(message.data));
+        window.ReactNativeWebView.postMessage(message.data);
       } else {
         parkDate.features.forEach(park => {
           if(park.properties.NAME === getData.properties.MALL){
