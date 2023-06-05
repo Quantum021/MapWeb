@@ -11,7 +11,7 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
 
 export default function App() {
-  const [selectedPark, setSelectedPark] = useState(null);
+  const [selectedPark, setSelectedPark] = useState({});
   // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
   // eslint-disable-next-line 
@@ -80,7 +80,7 @@ export default function App() {
     <>
       <MapGL
         dragRotate={false}
-        initialViewState={selectedPark !== null
+        initialViewState={typeof selectedPark.group !== 'undefined'
           ? {
             latitude: selectedPark.geometry.coordinates[1],
             longitude: selectedPark.geometry.coordinates[0],
