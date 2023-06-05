@@ -24,7 +24,21 @@ export default function App() {
       setLat(position.coords.latitude);
       setLong(position.coords.longitude);
     });
-    
+
+    setSelectedPark(window.addEventListener("message", message => {
+      let getData = JSON.parse(message.data);
+      // window.ReactNativeWebView.postMessage(message.data)
+      
+      setSelectedPark(getData);
+      if (getData.group === "bus") {
+        setToggle(false);
+      } else {
+        setToggle(true);
+      }
+       return getData;
+      // if(message)
+    })
+    )
     // window.dispatchEvent(d => {
     //   setToggle(true)
     // })
@@ -56,18 +70,7 @@ export default function App() {
     // };
   }, []);
 
-  window.addEventListener("message", message => {
-    let getData = JSON.parse(message.data);
-    // window.ReactNativeWebView.postMessage(message.data)
-    
-    setSelectedPark(getData);
-    if (getData.group === "bus") {
-      setToggle(false);
-    } else {
-      setToggle(true);
-    }
-    // if(message)
-  })
+
 
   // alert(selectedPark.group)
   // Restrict map panning to an area
