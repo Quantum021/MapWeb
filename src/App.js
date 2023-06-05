@@ -29,7 +29,7 @@ export default function App() {
   //   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
   //   style: 'mapbox://styles/quantum2021/cl4ikiamr000w15juomtzimvi',
   // });
-  // const map = useMap();
+  // const map = useRef();
 
   // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
@@ -121,7 +121,8 @@ export default function App() {
           maxBounds: bounds
         }}
         ref={map => {
-          if (selectedPark === null) {
+          // map = map3;
+          if (selectedPark !== null) {
             setTimeout(() => {
               map.flyTo({
                 center: [127.0133, 36.9672],
