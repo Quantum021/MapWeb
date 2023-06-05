@@ -11,7 +11,7 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
 
 export default function App() {
-  const [selectedPark, setSelectedPark] = useState(false);
+  const [selectedPark, setSelectedPark] = useState(null);
   // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
   // eslint-disable-next-line 
@@ -25,10 +25,19 @@ export default function App() {
       setLong(position.coords.longitude);
     });
 
-    window.addEventListener("message", () => {
-      setSelectedPark(true);
+    window.addEventListener("message", message => {
+      let getData = JSON.parse(message.data);
+      // window.ReactNativeWebView.postMessage(message.data)
+      
+      setSelectedPark(getData);
+      if (getData.group === "bus") {
+        setToggle(false);
+      } else {
+        setToggle(true);
+      }
+      alert(getData.geometry.coordinates[0])
+      // if(message)
     })
-
     // window.dispatchEvent(d => {
     //   setToggle(true)
     // })
@@ -73,51 +82,23 @@ export default function App() {
     <>
       <MapGL
         dragRotate={false}
-        initialViewState={
-          selectedPark ?
-            window.addEventListener("message", message => {
-              let getData = JSON.parse(message.data);
-              if (getData.group === "bus") {
-                setToggle(false);
-              } else {
-                setToggle(true);
-                return {
-                  latitude: getData.geometry.coordinates[1],
-                  longitude: getData.geometry.coordinates[0],
-                  width: "100vw",
-                  height: "100vh",
-                  zoom: 16,
-                  maxBounds: bounds
-                }
-              }
-              // if(message)
-            })
-            : {
-                latitude: 36.9672,
-                longitude: 127.0133,
-                width: "100vw",
-                height: "100vh",
-                zoom: 14,
-                maxBounds: bounds
-              }
-          // selectedPark.group !== -1
-          // ? {
-          //   latitude: selectedPark.geometry.coordinates[1],
-          //   longitude: selectedPark.geometry.coordinates[0],
-          //   width: "100vw",
-          //   height: "100vh",
-          //   zoom: 16,
-          //   maxBounds: bounds
-          // }
-          // : {
-          //   latitude: 36.9672,
-          //   longitude: 127.0133,
-          //   width: "100vw",
-          //   height: "100vh",
-          //   zoom: 14,
-          //   maxBounds: bounds
-          // }
-        }
+        initialViewState={selectedPark.group !== -1
+          ? {
+            latitude: selectedPark.geometry.coordinates[1],
+            longitude: selectedPark.geometry.coordinates[0],
+            width: "100vw",
+            height: "100vh",
+            zoom: 16,
+            maxBounds: bounds
+          }
+          : {
+            latitude: 36.9672,
+            longitude: 127.0133,
+            width: "100vw",
+            height: "100vh",
+            zoom: 14,
+            maxBounds: bounds
+          }}
         style={{ width: '100vw', height: '100vh' }}
         mapStyle="mapbox://styles/quantum2021/cl4ikiamr000w15juomtzimvi"
         mapboxAccessToken="pk.eyJ1IjoicXVhbnR1bTIwMjEiLCJhIjoiY2w0YXdseHZoMGp0ZzNobzdhOXM2Z3hpdSJ9.cxMFsx7RUfspcEz-C7loCw" >
