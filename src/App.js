@@ -25,8 +25,13 @@ export default function App() {
       setLong(position.coords.longitude);
     });
     window.addEventListener("message", message => {
-      alert(message)
+      // alert(message)
+      // document.ReactNativeWebView.postMessage(JSON.stringify(JSON.parse(message)))
+      setToggle(true);
     })
+    // window.dispatchEvent(d => {
+    //   setToggle(true)
+    // })
     // const listener = message => {
     //   // a = JSON.parse(message);
     //   // document.ReactNativeWebView.postMessage(JSON.stringify(JSON.parse(message)))
