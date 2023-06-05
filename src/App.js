@@ -104,7 +104,8 @@ export default function App() {
       }
       setToggle(true);
       setTimeout(()=>{
-        mapRef.current?.flyTo({center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]]})
+        mapRef.current?.flyTo({center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
+        zoom: 16})
       },1000);
       // setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
     }
