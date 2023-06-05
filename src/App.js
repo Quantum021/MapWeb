@@ -29,7 +29,7 @@ export default function App() {
       let getData = JSON.parse(message.data);
       // window.ReactNativeWebView.postMessage(message.data)
       
-      alert(getData.group)
+      alert(getData.geometry.coordinates[0])
       // setSelectedPark(getData);
       if (getData.group === "bus") {
         setToggle(false);
