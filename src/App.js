@@ -32,7 +32,7 @@ export default function App() {
           // });
         }
         // setToggle(true);
-        return[getData.geometry.coordinates[1], getData.geometry.coordinates[0]];
+        return[getData.geometry.coordinates[0], getData.geometry.coordinates[1]];
       }
       // if(message)
     })
