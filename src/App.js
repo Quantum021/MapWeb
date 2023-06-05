@@ -83,7 +83,7 @@ export default function App() {
     [127.1010, 37.0178] //northEast address
   ];
 
-  
+
   return (
     <>
       <MapGL
@@ -97,36 +97,38 @@ export default function App() {
           maxBounds: bounds
         }}
         ref={map => {
-          setTimeout(() => {
-            window.addEventListener("message", message => {
-              let getData = JSON.parse(message.data);
-              // window.ReactNativeWebView.postMessage(message.data)
+          window.addEventListener("message", message => {
+            let getData = JSON.parse(message.data);
+            // window.ReactNativeWebView.postMessage(message.data)
 
-              // selectedPark = [getData.geometry.coordinates[0], getData.geometry.coordinates[1]]
-              if (getData.group === "bus") {
-                setToggle(false);
+            // selectedPark = [getData.geometry.coordinates[0], getData.geometry.coordinates[1]]
+            if (getData.group === "bus") {
+              setToggle(false);
+            } else {
+              if (getData.group === "facility") {
+                window.ReactNativeWebView.postMessage(message.data);
               } else {
-                if (getData.group === "facility") {
-                  window.ReactNativeWebView.postMessage(message.data);
-                } else {
-                  parkDate.features.forEach(park => {
-                    if (park.properties.NAME === getData.properties.MALL) {
-                      let newob = park;
-                      newob.properties.list[getData.properties.index].isExpanded = true;
-                      window.ReactNativeWebView.postMessage(JSON.stringify(newob));
-                    }
-                  });
-                }
-                setToggle(true);
+                parkDate.features.forEach(park => {
+                  if (park.properties.NAME === getData.properties.MALL) {
+                    let newob = park;
+                    newob.properties.list[getData.properties.index].isExpanded = true;
+                    window.ReactNativeWebView.postMessage(JSON.stringify(newob));
+                  }
+                });
+              }
+              setToggle(true);
+
+              setTimeout(() => {
                 map.flyTo({
                   center: [getData.geometry.coordinates[0], getData.geometry.coordinates[0]],
                   zoom: 16
                 })
-                // setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
-              }
-              // if(message)
-            })
-          }, 1000)
+
+              }, 1000)
+              // setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
+            }
+            // if(message)
+          })
         }}
         id="map"
         style={{ width: '100vw', height: '100vh' }}
