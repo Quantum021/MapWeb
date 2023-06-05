@@ -25,8 +25,9 @@ export default function App() {
       setLong(position.coords.longitude);
     });
     window.addEventListener("message", message => {
-      let getData = message.data;
+      let getData = JSON.parse(message.data);
       // window.ReactNativeWebView.postMessage(message.data)
+      alert(getData.group)
       setSelectedPark(getData);
       if (getData.group === "bus") {
         setToggle(false);
