@@ -27,7 +27,7 @@ export default function App() {
     window.addEventListener("message", message => {
       let getData = JSON.parse(message.data);
       // window.ReactNativeWebView.postMessage(message.data)
-      alert(getData.group)
+      
       setSelectedPark(getData);
       if (getData.group === "bus") {
         setToggle(false);
@@ -66,6 +66,9 @@ export default function App() {
     //   window.removeEventListener("load", listener);
     // };
   }, []);
+
+
+  alert(selectedPark)
   // Restrict map panning to an area
   const bounds = [
     [126.9044, 36.9083], //southwest address
