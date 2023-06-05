@@ -11,14 +11,17 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
 
 export default function App() {
-  const [getLat, setGetLat] = useState(0);
-  const [getLong, setGetLong] = useState(0);
+  // const [selectedPark, setSelectedPark] = useState(null);
   // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
   // eslint-disable-next-line 
   const [long, setLong] = useState([]);
 
-  const [toggle, setToggle] = useState(false);
+  const [toggle, setToggle] = useState({
+    "lat": 0,
+    "long": 0,
+    "bool": false
+  });
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
@@ -29,14 +32,19 @@ export default function App() {
     window.addEventListener("message", message => {
       let getData = JSON.parse(message.data);
       // window.ReactNativeWebView.postMessage(message.data)
-
-      setGetLat(getData.geometry.coordinates[1]);
-      setGetLong(getData.geometry.coordinates[0]);
       // setSelectedPark(getData);
       if (getData.group === "bus") {
-        setToggle(false);
+        setToggle(prev => {
+          return { ...prev };
+        });
       } else {
-        setToggle(true);
+        setToggle(prev => {
+          return {
+            ...prev,
+            "lat": getData.geometry.coordinates[1],
+            "long": getData.geometry.coordinates[0]
+          };
+        });
       }
       // if(message)
     })
@@ -71,8 +79,7 @@ export default function App() {
     // };
   }, []);
 
-
-  alert(getLat, getLong)
+alert(toggle.lat)
 
   // alert(selectedPark.group)
   // Restrict map panning to an area
@@ -85,23 +92,14 @@ export default function App() {
     <>
       <MapGL
         dragRotate={false}
-        initialViewState={getLat === 0
-          ? {
-            latitude: 36.9672,
-            longitude: 127.0133,
-            width: "100vw",
-            height: "100vh",
-            zoom: 14,
-            maxBounds: bounds
-          }
-          : {
-            latitude: getLat,
-            longitude: getLong,
-            width: "100vw",
-            height: "100vh",
-            zoom: 14,
-            maxBounds: bounds
-          }}
+        initialViewState={{
+          latitude: 36.9672,
+          longitude: 127.0133,
+          width: "100vw",
+          height: "100vh",
+          zoom: 14,
+          maxBounds: bounds
+        }}
         style={{ width: '100vw', height: '100vh' }}
         mapStyle="mapbox://styles/quantum2021/cl4ikiamr000w15juomtzimvi"
         mapboxAccessToken="pk.eyJ1IjoicXVhbnR1bTIwMjEiLCJhIjoiY2w0YXdseHZoMGp0ZzNobzdhOXM2Z3hpdSJ9.cxMFsx7RUfspcEz-C7loCw" >
@@ -113,26 +111,28 @@ export default function App() {
         />
         <NavigationControl position="bottom-right" showCompass={false} />
         <button className="toggle-btn" onClick={() => {
-          setToggle(!toggle);
+          setToggle(prev => {
+            return{...prev, "bool": !toggle.bool}
+          });
         }}>
           <div style={{
             borderRadius: 20,
-            color: !toggle ? '#fff' : '#000',
+            color: !toggle.bool ? '#fff' : '#000',
             fontSize: 13,
             margin: 3,
             fontWeight: 'bold',
-            backgroundColor: !toggle ? '#000' : '#fff',
+            backgroundColor: !toggle.bool ? '#000' : '#fff',
             height: '75%',
           }}>
             Bus
           </div>
           <div style={{
             borderRadius: 20,
-            color: toggle ? '#fff' : '#000',
+            color: toggle.bool ? '#fff' : '#000',
             fontSize: 13,
             margin: 3,
             fontWeight: 'bold',
-            backgroundColor: toggle ? '#000' : '#fff',
+            backgroundColor: toggle.bool ? '#000' : '#fff',
             height: '80%',
           }}>
             Facility
@@ -140,7 +140,7 @@ export default function App() {
         </button>
 
         {parkDate.features.map(park => {
-          if (!toggle) {
+          if (!toggle.bool) {
             if (park.group === "bus") {
               return <Marker
                 key={park.id}
