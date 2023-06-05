@@ -69,7 +69,7 @@ export default function App() {
     // if(message)
   })
 
-  alert(selectedPark.group)
+  // alert(selectedPark.group)
   // Restrict map panning to an area
   const bounds = [
     [126.9044, 36.9083], //southwest address
