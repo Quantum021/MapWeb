@@ -84,8 +84,8 @@ export default function App() {
             maxBounds: bounds
           }
           : {
-            latitude: 36.9672,
-            longitude: 127.0133,
+            latitude: 0,
+            longitude: 0,
             width: "100vw",
             height: "100vh",
             zoom: 13,
