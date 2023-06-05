@@ -85,7 +85,7 @@ export default function App() {
           }
         });
       }
-      setSelectedPark(getData);
+      setSelectedPark(JSON.parse(message.data));
       setToggle(true);
       
     }
