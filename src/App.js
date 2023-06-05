@@ -11,7 +11,7 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
 
 export default function App() {
-  const [selectedPark, setSelectedPark] = useState(null);
+  const [selectedPark, setSelectedPark] = useState({});
   // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
   // eslint-disable-next-line 
@@ -70,7 +70,7 @@ export default function App() {
     let getData = JSON.parse(message.data);
     // window.ReactNativeWebView.postMessage(message.data)
     
-    // setSelectedPark(getData);
+    setSelectedPark(getData);
     if (getData.group === "bus") {
       setToggle(false);
     } else {
@@ -85,7 +85,6 @@ export default function App() {
           }
         });
       }
-      setSelectedPark(JSON.parse(message.data));
       setToggle(true);
       
     }
@@ -96,8 +95,8 @@ export default function App() {
       <MapGL
         dragRotate={false}
         initialViewState={{
-          latitude: selectedPark === null ?  36.9672 : selectedPark.geometry.coordinates[1],
-          longitude: selectedPark === null ? 127.0133 : selectedPark.geometry.coordinates[0],
+          latitude: typeof selectedPark.geometry === 'undefined' ?  36.9672 : selectedPark.geometry.coordinates[1],
+          longitude: typeof selectedPark.geometry === 'undefined' ? 127.0133 : selectedPark.geometry.coordinates[0],
           width: "100vw",
           height: "100vh",
           zoom: 14,
