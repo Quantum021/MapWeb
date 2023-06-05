@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import MapGL, { Marker, GeolocateControl, NavigationControl, ScaleControl } from "react-map-gl";
-import mapboxgl from 'mapbox-gl';
 import parkDate from "./data/skateboard-parks.json";
 import 'mapbox-gl/dist/mapbox-gl.css';
 import DirectionsBusIcon from '@mui/icons-material/DirectionsBus';
@@ -10,8 +9,28 @@ import BedOutlinedIcon from '@mui/icons-material/BedOutlined';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
+// import mapboxgl from 'mapbox-gl/dist/mapbox-gl';
+// import MapboxWorker from 'mapbox-gl/dist/mapbox-gl-csp-worker';
+
+// // mapboxgl.workerClass = MapboxWorker;
+// const map = new mapboxgl.Map({
+//     container: 'map', // container ID
+//     style: 'mapbox://styles/mapbox/streets-v12', // style URL
+//     center: [-74.5, 40], // starting position [lng, lat]
+//     zoom: 9 // starting zoom
+// });
 
 export default function App() {
+  // let [selectedPark, setSelectedPark] = useState(null);
+
+  // mapboxgl.accessToken = 'pk.eyJ1IjoicXVhbnR1bTIwMjEiLCJhIjoiY2w0YXdseHZoMGp0ZzNobzdhOXM2Z3hpdSJ9.cxMFsx7RUfspcEz-C7loCw';
+  // const map = new mapboxgl.Map({
+  //   container: 'map',
+  //   // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+  //   style: 'mapbox://styles/quantum2021/cl4ikiamr000w15juomtzimvi',
+  // });
+  // const map = useMap();
+
   // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
   // eslint-disable-next-line 
@@ -24,8 +43,7 @@ export default function App() {
       setLat(position.coords.latitude);
       setLong(position.coords.longitude);
     });
-
-
+    // map.setCenter([0,0]);
     // window.dispatchEvent(d => {
     //   setToggle(true)
     // })
@@ -34,7 +52,6 @@ export default function App() {
     //   // document.ReactNativeWebView.postMessage(JSON.stringify(JSON.parse(message)))
     //   // setToggle(true)
     //   alert(message)
-
     // };
 
     // window.onload(e => {
@@ -53,12 +70,12 @@ export default function App() {
     // window.addEventListener("load", listener);
 
     return () => {
-      window.removeEventListener("message");
+      window.removeEventListener("message", () => { });
     };
   }, []);
 
 
-
+  // map.current.flyTo({center:[0,0]})
   // alert(selectedPark.group)
   // Restrict map panning to an area
   const bounds = [
@@ -66,42 +83,7 @@ export default function App() {
     [127.1010, 37.0178] //northEast address
   ];
 
-  window.addEventListener("message", message => {
-    let getData = JSON.parse(message.data);
-    // window.ReactNativeWebView.postMessage(message.data)
-
-    // selectedPark = [getData.geometry.coordinates[0], getData.geometry.coordinates[1]]
-    if (getData.group === "bus") {
-      setToggle(false);
-    } else {
-      if (getData.group === "facility") {
-        window.ReactNativeWebView.postMessage(message.data);
-      } else {
-        parkDate.features.forEach(park => {
-          if (park.properties.NAME === getData.properties.MALL) {
-            let newob = park;
-            newob.properties.list[getData.properties.index].isExpanded = true;
-            window.ReactNativeWebView.postMessage(JSON.stringify(newob));
-          }
-        });
-      }
-      setToggle(true);
-      mapboxgl.accessToken = 'pk.eyJ1IjoicXVhbnR1bTIwMjEiLCJhIjoiY2w0YXdseHZoMGp0ZzNobzdhOXM2Z3hpdSJ9.cxMFsx7RUfspcEz-C7loCw';
-      const map = new mapboxgl.Map({
-        container: 'map',
-        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
-        style: 'mapbox://styles/quantum2021/cl4ikiamr000w15juomtzimvi',
-        center: [36.9672, 127.0133],
-        zoom: 14
-        });
-        map.flyTo({
-          center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
-          essential: true // this animation is considered essential with respect to prefers-reduced-motion
-          });
-      // setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
-    }
-    // if(message)
-  })
+  
   return (
     <>
       <MapGL
@@ -109,11 +91,44 @@ export default function App() {
         initialViewState={{
           latitude: 36.9672,
           longitude: 127.0133,
-          width: "100vw",
-          height: "100vh",
+          width: "10vw",
+          height: "10vh",
           zoom: 14,
           maxBounds: bounds
         }}
+        ref={map => {
+          setTimeout(() => {
+            window.addEventListener("message", message => {
+              let getData = JSON.parse(message.data);
+              // window.ReactNativeWebView.postMessage(message.data)
+
+              // selectedPark = [getData.geometry.coordinates[0], getData.geometry.coordinates[1]]
+              if (getData.group === "bus") {
+                setToggle(false);
+              } else {
+                if (getData.group === "facility") {
+                  window.ReactNativeWebView.postMessage(message.data);
+                } else {
+                  parkDate.features.forEach(park => {
+                    if (park.properties.NAME === getData.properties.MALL) {
+                      let newob = park;
+                      newob.properties.list[getData.properties.index].isExpanded = true;
+                      window.ReactNativeWebView.postMessage(JSON.stringify(newob));
+                    }
+                  });
+                }
+                setToggle(true);
+                map.flyTo({
+                  center: [getData.geometry.coordinates[0], getData.geometry.coordinates[0]],
+                  zoom: 16
+                })
+                // setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
+              }
+              // if(message)
+            })
+          }, 1000)
+        }}
+        id="map"
         style={{ width: '100vw', height: '100vh' }}
         mapStyle="mapbox://styles/quantum2021/cl4ikiamr000w15juomtzimvi"
         mapboxAccessToken="pk.eyJ1IjoicXVhbnR1bTIwMjEiLCJhIjoiY2w0YXdseHZoMGp0ZzNobzdhOXM2Z3hpdSJ9.cxMFsx7RUfspcEz-C7loCw" >
