@@ -26,7 +26,7 @@ export default function App() {
     });
 
     window.addEventListener("message", message => {
-      let getData = JSON.parse(message.data);
+      let getData = message.data;
       // window.ReactNativeWebView.postMessage(message.data)
       
       setSelectedPark(getData);
