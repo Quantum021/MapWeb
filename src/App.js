@@ -91,19 +91,27 @@ export default function App() {
     }
     // if(message)
   })
-  alert(selectedPark.geometry.coordinates[0])
   return (
     <>
       <MapGL
         dragRotate={false}
-        initialViewState={{
-            latitude: 36.9672,
-            longitude: 127.0133,
-            width: "100vw",
-            height: "100vh",
-            zoom: 14,
-            maxBounds: bounds
-          }}
+        initialViewState={selectedPark === null
+        ? {
+          latitude: 36.9672,
+          longitude: 127.0133,
+          width: "100vw",
+          height: "100vh",
+          zoom: 14,
+          maxBounds: bounds
+        }
+      : {
+        latitude: selectedPark.geometry.coordinates[1],
+        longitude: selectedPark.geometry.coordinates[0],
+        width: "100vw",
+        height: "100vh",
+        zoom: 16,
+        maxBounds: bounds
+      }}
         style={{ width: '100vw', height: '100vh' }}
         mapStyle="mapbox://styles/quantum2021/cl4ikiamr000w15juomtzimvi"
         mapboxAccessToken="pk.eyJ1IjoicXVhbnR1bTIwMjEiLCJhIjoiY2w0YXdseHZoMGp0ZzNobzdhOXM2Z3hpdSJ9.cxMFsx7RUfspcEz-C7loCw" >
