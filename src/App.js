@@ -79,7 +79,7 @@ export default function App() {
     // };
   }, []);
 
-alert(toggle.lat)
+// alert(toggle.lat)
 
   // alert(selectedPark.group)
   // Restrict map panning to an area
