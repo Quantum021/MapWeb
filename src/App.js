@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import MapGL, { Marker, GeolocateControl, NavigationControl, ScaleControl } from "react-map-gl";
 import parkDate from "./data/skateboard-parks.json";
 import 'mapbox-gl/dist/mapbox-gl.css';
@@ -11,7 +11,32 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
 
 export default function App() {
-  const [selectedPark, setSelectedPark] = useState([0, 0]);
+  const selectedPark = useRef(()=>{
+    window.addEventListener("message", message => {
+      let getData = JSON.parse(message.data);
+      // window.ReactNativeWebView.postMessage(message.data)
+  
+      if (getData.group === "bus") {
+        // setToggle(false);
+        return [0,0];
+      } else {
+        if (getData.group === "facility") {
+          // window.ReactNativeWebView.postMessage(message.data);
+        } else {
+          // parkDate.features.forEach(park => {
+          //   if (park.properties.NAME === getData.properties.MALL) {
+          //     let newob = park;
+          //     newob.properties.list[getData.properties.index].isExpanded = true;
+          //     window.ReactNativeWebView.postMessage(JSON.stringify(newob));
+          //   }
+          // });
+        }
+        // setToggle(true);
+        return[getData.geometry.coordinates[1], getData.geometry.coordinates[0]];
+      }
+      // if(message)
+    })
+  });
   // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
   // eslint-disable-next-line 
@@ -85,7 +110,7 @@ export default function App() {
         });
       }
       setToggle(true);
-      setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
+      // setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
     }
     // if(message)
   })
