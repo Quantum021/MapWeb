@@ -11,7 +11,7 @@ import LocalMallOutlinedIcon from '@mui/icons-material/LocalMallOutlined';
 import DoorSlidingOutlinedIcon from '@mui/icons-material/DoorSlidingOutlined';
 
 export default function App() {
-  const [selectedPark, setSelectedPark] = useState({});
+  const [selectedPark, setSelectedPark] = useState([0,0]);
   // eslint-disable-next-line 
   const [lat, setLat] = useState([]);
   // eslint-disable-next-line 
@@ -70,7 +70,7 @@ export default function App() {
     let getData = JSON.parse(message.data);
     // window.ReactNativeWebView.postMessage(message.data)
     
-    setSelectedPark(getData);
+    setSelectedPark([getData.geometry.coordinates[1], getData.geometry.coordinates[0]]);
     if (getData.group === "bus") {
       setToggle(false);
     } else {
