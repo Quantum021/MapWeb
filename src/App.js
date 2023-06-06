@@ -44,6 +44,12 @@ export default function App() {
     if (getData.group === "bus") {
       window.ReactNativeWebView.postMessage(message.data);
       setToggle(false);
+      setTimeout(() => {
+        mapRef.current?.flyTo({
+          center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
+          zoom: 16
+        })
+      }, 1000);
     } else {
       if (getData.group === "facility") {
         window.ReactNativeWebView.postMessage(message.data);
