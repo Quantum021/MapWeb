@@ -10,6 +10,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 28,
         "FACILITYID": 49211,
         "NAME": "Pedestrian Gate",
@@ -66,6 +67,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 24,
         "FACILITYID": 35667,
         "NAME": "Provider Grill DFAC",
@@ -149,6 +151,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 23,
         "FACILITYID": 28010,
         "NAME": "SLQs (12200s Block)",
@@ -215,6 +218,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 26,
         "FACILITYID": 49251,
         "NAME": "Eighth Army",
@@ -291,6 +295,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 27,
         "FACILITYID": 49251,
         "NAME": "Corps of Engineers",
@@ -347,6 +352,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 36,
         "FACILITYID": 35299,
         "NAME": "TMP (Driver's Licensing)",
@@ -415,6 +421,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 39,
         "FACILITYID": 35299,
         "NAME": "Artfield Operations",
@@ -473,6 +480,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 40,
         "FACILITYID": 35299,
         "NAME": "Talon Cafe DFAC",
@@ -531,6 +539,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 40,
         "FACILITYID": 35299,
         "NAME": "Barracks (6000's Block)",
@@ -588,6 +597,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 16,
         "FACILITYID": 28017,
         "NAME": "Pacific Victors Chapel",
@@ -658,6 +668,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 12,
         "FACILITYID": 35050,
         "NAME": "Spartan DFAC",
@@ -746,6 +757,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 5,
         "FACILITYID": 28018,
         "NAME": "LTG Timothy J. Maude Hall (9th Street)",
@@ -806,6 +818,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 29,
         "FACILITYID": 35299,
         "NAME": "Commissary",
@@ -865,6 +878,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 30,
         "FACILITYID": 35299,
         "NAME": "Main Post Office",
@@ -905,6 +919,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 6,
         "FACILITYID": 28019,
         "NAME": "Main Exchange",
@@ -956,6 +971,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 11,
         "FACILITYID": 35050,
         "NAME": "Pittman DFAC",
@@ -1006,6 +1022,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 9,
         "FACILITYID": 28000,
         "NAME": "Sitman Fitness Center",
@@ -1056,6 +1073,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 10,
         "FACILITYID": 28008,
         "NAME": "2ID Sustainment",
@@ -1086,6 +1104,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 10,
         "FACILITYID": 28008,
         "NAME": "Central Issue Facility",
@@ -1116,6 +1135,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 10,
         "FACILITYID": 28008,
         "NAME": "Barracks (6800s & 6900s Block)",
@@ -1146,6 +1166,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 25,
         "FACILITYID": 49251,
         "NAME": "Desiderio ATC Tower",
@@ -1176,6 +1197,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 33,
         "FACILITYID": 35299,
         "NAME": "Law Enforcement Center (DES)",
@@ -1216,6 +1238,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 1,
         "FACILITYID": 28001,
         "NAME": "Brian D. Allgood Army Community Hospital (Key Street)",
@@ -1246,6 +1269,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 1,
         "FACILITYID": 28001,
         "NAME": "Bus Terminal",
@@ -1296,6 +1320,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 22,
         "FACILITYID": 35120,
         "NAME": "Lodging",
@@ -1336,6 +1361,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 3,
         "FACILITYID": 28007,
         "NAME": "Korean Theater of Operations Museum",
@@ -1376,6 +1402,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 20,
         "FACILITYID": 28013,
         "NAME": "MSG Henry L. Jenkins Medical Clinic",
@@ -1416,6 +1443,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 18,
         "FACILITYID": 28011,
         "NAME": "Collier Community Fitness Center",
@@ -1466,6 +1494,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 15,
         "FACILITYID": 35637,
         "NAME": "Turner Fitness Center",
@@ -1506,6 +1535,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 3,
         "FACILITYID": 28007,
         "NAME": "Family Housing Towers (5050s & 5070s Block)",
@@ -1546,6 +1576,7 @@
     {
       "type": "Feature",
       "properties": {
+        "TYPE":"Bus",
         "PARK_ID": 14,
         "FACILITYID": 35050,
         "NAME": "Balboni Sports Field Complex (5th Street)",
