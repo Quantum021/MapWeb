@@ -40,8 +40,9 @@ export default function App() {
 
   window.addEventListener("message", message => {
     let getData = JSON.parse(message.data);
-    
+
     if (getData.group === "bus") {
+      window.ReactNativeWebView.postMessage(message.data);
       setToggle(false);
     } else {
       if (getData.group === "facility") {
@@ -56,10 +57,12 @@ export default function App() {
         });
       }
       setToggle(true);
-      setTimeout(()=>{
-        mapRef.current?.flyTo({center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
-        zoom: 16})
-      },1000);
+      setTimeout(() => {
+        mapRef.current?.flyTo({
+          center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
+          zoom: 16
+        })
+      }, 1000);
     }
   })
 
