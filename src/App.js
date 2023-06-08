@@ -17,13 +17,13 @@ export default function App() {
   const [long, setLong] = useState([]);
   const [toggle, setToggle] = useState(false);
   const mapRef = useRef(null);
-  const varUA = navigator.userAgent.toLowerCase();
+  const [varUA, setvarUA] = useState(navigator.userAgent.toLowerCase());
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
       setLat(position.coords.latitude);
       setLong(position.coords.longitude);
     });
-
+    setvarUA(navigator.userAgent.toLowerCase());
     return () => {
       if (varUA.indexOf('android') > -1) {
         /* android */
