@@ -17,18 +17,23 @@ export default function App() {
   const [long, setLong] = useState([]);
   const [toggle, setToggle] = useState(false);
   const mapRef = useRef(null);
-  const [varUA, setvarUA] = useState(navigator.userAgent.toLowerCase());
+
+  function varUA () {
+    return navigator.userAgent.toLowerCase();
+  };
+
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
       setLat(position.coords.latitude);
       setLong(position.coords.longitude);
     });
-    setvarUA(navigator.userAgent.toLowerCase());
+
     return () => {
-      if (varUA.indexOf('android') > -1) {
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+      if (varUA().indexOf('android') > -1) {
         /* android */
         document.removeEventListener("message", () => { });
-      } else if (varUA.indexOf('iphone') > -1 || varUA.indexOf('ipad') > -1 || varUA.indexOf('ipod') > -1) {
+      } else if (varUA().indexOf('iphone') > -1 || varUA().indexOf('ipad') > -1 || varUA().indexOf('ipod') > -1) {
         /* ios */
         window.removeEventListener("message", () => { });
       }
@@ -44,7 +49,7 @@ export default function App() {
     [127.1010, 37.0178] //northEast address
   ];
 
-  if (varUA.indexOf('android') > -1) {
+  if (varUA().indexOf('android') > -1) {
     /* android */
     document.addEventListener("message", message => {
       let getData = JSON.parse(message.data);
@@ -79,7 +84,7 @@ export default function App() {
         }, 1000);
       }
     });
-  } else if (varUA.indexOf('iphone') > -1 || varUA.indexOf('ipad') > -1 || varUA.indexOf('ipod') > -1) {
+  } else if (varUA().indexOf('iphone') > -1 || varUA().indexOf('ipad') > -1 || varUA().indexOf('ipod') > -1) {
     /* ios */
     window.addEventListener("message", message => {
       let getData = JSON.parse(message.data);
