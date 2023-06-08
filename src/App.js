@@ -15,9 +15,9 @@ export default function App() {
   const [lat, setLat] = useState([]);
   // eslint-disable-next-line 
   const [long, setLong] = useState([]);
-
   const [toggle, setToggle] = useState(false);
   const mapRef = useRef(null);
+  const varUA = navigator.userAgent.toLowerCase();
   useEffect(() => {
     navigator.geolocation.getCurrentPosition(function (position) {
       setLat(position.coords.latitude);
@@ -25,7 +25,13 @@ export default function App() {
     });
 
     return () => {
-      window.removeEventListener("message", () => { });
+      if (varUA.indexOf('android') > -1) {
+        /* android */
+        document.removeEventListener("message", () => { });
+      } else if (varUA.indexOf('iphone') > -1 || varUA.indexOf('ipad') > -1 || varUA.indexOf('ipod') > -1) {
+        /* ios */
+        window.removeEventListener("message", () => { });
+      }
     };
   }, []);
 
@@ -38,39 +44,77 @@ export default function App() {
     [127.1010, 37.0178] //northEast address
   ];
 
-  window.addEventListener("message", message => {
-    let getData = JSON.parse(message.data);
+  if (varUA.indexOf('android') > -1) {
+    /* android */
+    document.addEventListener("message", message => {
+      let getData = JSON.parse(message.data);
 
-    if (getData.group === "bus") {
-      window.ReactNativeWebView.postMessage(message.data);
-      setToggle(false);
-      setTimeout(() => {
-        mapRef.current?.flyTo({
-          center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
-          zoom: 16
-        })
-      }, 1000);
-    } else {
-      if (getData.group === "facility") {
+      if (getData.group === "bus") {
         window.ReactNativeWebView.postMessage(message.data);
+        setToggle(false);
+        setTimeout(() => {
+          mapRef.current?.flyTo({
+            center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
+            zoom: 16
+          })
+        }, 1000);
       } else {
-        parkDate.features.forEach(park => {
-          if (park.properties.NAME === getData.properties.MALL) {
-            let newob = park;
-            newob.properties.list[getData.properties.index].isExpanded = true;
-            window.ReactNativeWebView.postMessage(JSON.stringify(newob));
-          }
-        });
+        if (getData.group === "facility") {
+          window.ReactNativeWebView.postMessage(message.data);
+        } else {
+          parkDate.features.forEach(park => {
+            if (park.properties.NAME === getData.properties.MALL) {
+              let newob = park;
+              newob.properties.list[getData.properties.index].isExpanded = true;
+              window.ReactNativeWebView.postMessage(JSON.stringify(newob));
+            }
+          });
+        }
+        setToggle(true);
+        setTimeout(() => {
+          mapRef.current?.flyTo({
+            center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
+            zoom: 16
+          })
+        }, 1000);
       }
-      setToggle(true);
-      setTimeout(() => {
-        mapRef.current?.flyTo({
-          center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
-          zoom: 16
-        })
-      }, 1000);
-    }
-  })
+    });
+  } else if (varUA.indexOf('iphone') > -1 || varUA.indexOf('ipad') > -1 || varUA.indexOf('ipod') > -1) {
+    /* ios */
+    window.addEventListener("message", message => {
+      let getData = JSON.parse(message.data);
+
+      if (getData.group === "bus") {
+        window.ReactNativeWebView.postMessage(message.data);
+        setToggle(false);
+        setTimeout(() => {
+          mapRef.current?.flyTo({
+            center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
+            zoom: 16
+          })
+        }, 1000);
+      } else {
+        if (getData.group === "facility") {
+          window.ReactNativeWebView.postMessage(message.data);
+        } else {
+          parkDate.features.forEach(park => {
+            if (park.properties.NAME === getData.properties.MALL) {
+              let newob = park;
+              newob.properties.list[getData.properties.index].isExpanded = true;
+              window.ReactNativeWebView.postMessage(JSON.stringify(newob));
+            }
+          });
+        }
+        setToggle(true);
+        setTimeout(() => {
+          mapRef.current?.flyTo({
+            center: [getData.geometry.coordinates[0], getData.geometry.coordinates[1]],
+            zoom: 16
+          })
+        }, 1000);
+      }
+    });
+  }
 
   return (
     <>
